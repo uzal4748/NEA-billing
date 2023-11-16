@@ -1,0 +1,136 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<div class="container justify-content-center ">
+    <h4> Manage Bills</h4>
+        <form class="mt-2" method="POST">
+          {% csrf_token %}
+        <div class="mb-3 mt-2">
+            <label for="exampleFormControlInput1" class="form-label">BID</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" name="BID">
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Bill Issued Date</label>
+            <div class="col-5">
+              <div class="input-group date" id="datepicker">
+                <input type="date" class="form-control" id="date" name="BDate">
+                <!-- <span class="input-group-append">
+                  <span class="input-group-text bg-light d-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                      </svg>
+                  </span>
+                </span> -->
+              </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="date2" class="form-label">Bill Year (BS)</label>
+            <div class="col-5">
+              <div class="input-group date" id="datepicker">
+                <input type="number" min="2000" max="2080" step="1" value="2080" class="form-control" id="date2" name="BYear">
+                <!-- <span class="input-group-append">
+                  <span class="input-group-text bg-light d-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                      </svg>
+                  </span>
+                </span> -->
+              </div>
+            </div>
+        </div>
+
+        <!-- <div class="mb-3">
+            <label for="date3" class="form-label">Bill Month</label>
+            <div class="col-5">
+              <div class="input-group date" id="datepicker">
+                <input type="text" class="form-control" id="date3" name="BMonth">
+                <span class="input-group-append">
+                  <span class="input-group-text bg-light d-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                      </svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+        </div> -->
+        <div class="mb-3">
+            <label for="exampleFormControl" class="form-label">Bill Month</label>
+            <select class="form-select" aria-label="Default select example" name="BMonth">
+                <option selected>Baisak</option>
+                <option value="1">Jestha</option>
+                <option value="2">Asar</option>
+                <option value="3">Shrawan</option>
+                <option value="4">Bhadra</option>
+                <option value="5">Asoj</option>
+                <option value="6">Kartik</option>
+                <option value="7">Mangsir</option>
+                <option value="8">Poush</option>
+                <option value="9">Magh</option>
+                <option value="10">Falgun</option>
+                <option value="11">Chaitra</option>
+              </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">CUSID</label>
+            <input type="number" class="form-control" id="exampleFormControlInput2" name="CUSId">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Current_Reading</label>
+            <input type="number" class="form-control" id="exampleFormControlInput3" name="crreading">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput4" class="form-label">Previous_Reading</label>
+            <input type="number" class="form-control" id="exampleFormControlInput4" name="prreading">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput5" class="form-label">Bill Amount</label>
+            <input type="number" class="form-control" id="exampleFormControlInput5" name="Bamt">
+        </div>
+        
+        <div class="mt-2">
+            <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        </div>
+
+        
+    </form>
+<!-- date ko lagi script-->
+    <!-- <script type="text/javascript">
+        $(function () {
+            $('#date').datetimepicker({
+                viewMode: 'years',
+                format: 'DD/MM/YYYY'
+            });
+        });
+     </script> -->
+</div>
+
+<!-- <script type="text/javascript">
+    $(function () {
+        $('#date2').datetimepicker({
+            viewMode: 'years',
+            format: 'YYYY'
+        });
+    });
+ </script> -->
+</div>
+
+<!-- <script type="text/javascript">
+    $(function () {
+        $('#date3').datetimepicker({
+            viewMode: 'years',
+            format: 'MM'
+        });
+    });
+ </script> -->
+</div>
+
+{% endblock %}

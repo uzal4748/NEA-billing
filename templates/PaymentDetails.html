@@ -1,0 +1,76 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<div class="container justify-content-center ">
+    <h4> Manage Payment Details</h4>
+        <form class="mt-2" method="POST">
+            {% csrf_token %}
+        <div class="mb-3 mt-2">
+            <label for="exampleFormControlInput1" class="form-label">PID</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" name="PID">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">BID</label>
+            <input type="number" class="form-control" id="exampleFormControlInput2" name="BId">
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Payment Date</label>
+            <div class="col-5">
+              <div class="input-group date" id="datepicker">
+                <input type="date" class="input-group-date" id="datepicker" name="pdate">
+                <!-- <input type="text" class="form-control" id="date" name="PDate">
+                <span class="input-group-append">
+                  <span class="input-group-text bg-light d-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="25" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                      </svg>
+                  </span>
+                </span> -->
+              </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput9" class="form-label">Payment Amount</label>
+            <input type="number" class="form-control" id="exampleFormControlInput9" name="pamt">
+        </div>
+        
+
+        
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Payment_Type_ID</label>
+            <input type="number" class="form-control" id="exampleFormControlInput3" name="Payment_Type_ID">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput4" class="form-label">Rebate Amount</label>
+            <input type="number" class="form-control" id="exampleFormControlInput4" name="Rebate_amt">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput5" class="form-label">Fine Amount</label>
+            <input type="number" class="form-control" id="exampleFormControlInput5" name="Fine_amt">
+        </div>
+
+        <div class="mt-2">
+            <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        </div>
+        
+    </form>
+<!-- date ko lagi script
+    <script type="text/javascript">
+        $(function () {
+            $('#date').datetimepicker({
+                viewMode: 'years',
+                format: 'DD/MM/YYYY'
+            });
+        });
+     </script> -->
+</div>
+
+</div>
+
+{% endblock %}

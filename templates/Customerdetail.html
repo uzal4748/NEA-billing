@@ -1,0 +1,49 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<div class="container justify-content-center ">
+    <h4> Customer Details</h4>
+        <form class="mt-2" action="{% url 'Customer' %}" method="post">
+            {% csrf_token %}
+        <div class="mb-3 mt-2">
+            <label for="exampleFormControlInput1" class="form-label">SCNO</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" name="SCNO">
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">CUSID</label>
+            <input type="number" class="form-control" id="exampleFormControlInput2" name="CUSID">
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">FullName</label>
+            <input type="text" class="form-control" id="exampleFormControlTextarea1" name="FullName">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea2" class="form-label">Address</label>
+            <input type="text" class="form-control" id="exampleFormControlTextarea2" name="Address">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">MobileNo</label>
+            <input type="number" class="form-control" id="exampleFormControlInput3" name="MobileNo">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput4" class="form-label">Branch_Id</label>
+            <input type="number" class="form-control" id="exampleFormControlInput4" name="Branch_Id">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput5" class="form-label">Demand_type_ID</label>
+            <input type="number" class="form-control" id="exampleFormControlInput5" name="Demand_type_ID">
+        </div>
+
+        
+        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+{% endblock %}
